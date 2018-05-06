@@ -1,0 +1,14 @@
+﻿@page
+@model UbuntuTestWeb.Pages.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var v in Model.Values) { 
+    <div>
+        @v
+    </div>
+}
+

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UbuntuTest", "UbuntuTest\UbuntuTest.csproj", "{C640FE86-5BAD-4D43-8DB6-8DD8418E0037}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UbuntuTestWeb", "UbuntuTestWeb\UbuntuTestWeb.csproj", "{A0DA66C3-53CC-485D-ADC2-8A683448D4B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{459504EE-212C-423F-A24B-1E128CDBE355}"
+	ProjectSection(SolutionItems) = preProject
+		default = default
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C640FE86-5BAD-4D43-8DB6-8DD8418E0037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C640FE86-5BAD-4D43-8DB6-8DD8418E0037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C640FE86-5BAD-4D43-8DB6-8DD8418E0037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C640FE86-5BAD-4D43-8DB6-8DD8418E0037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0DA66C3-53CC-485D-ADC2-8A683448D4B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DA66C3-53CC-485D-ADC2-8A683448D4B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DA66C3-53CC-485D-ADC2-8A683448D4B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DA66C3-53CC-485D-ADC2-8A683448D4B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAC3FFAE-0D07-4921-AE66-9F233144E6A9}
+	EndGlobalSection
+EndGlobal
