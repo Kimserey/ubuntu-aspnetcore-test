@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 
 namespace UbuntuTest
 {
@@ -31,10 +33,8 @@ namespace UbuntuTest
             app.Use((ctx, next) =>
             {
                 Console.WriteLine("Before forwarded headers");
-                Console.WriteLine("Host: " + ctx.Request.Host);
-                Console.WriteLine("Path: " + ctx.Request.Path);
-                Console.WriteLine("For: " + ctx.Connection.RemoteIpAddress);
-                Console.WriteLine("Scheme: " + ctx.Request.Scheme);
+                Console.WriteLine("-----------------------");
+                Print(ctx);
                 return next();
             });
 
@@ -46,14 +46,26 @@ namespace UbuntuTest
             app.Use((ctx, next) =>
             {
                 Console.WriteLine("After forwarded headers");
-                Console.WriteLine("Host: " + ctx.Request.Host);
-                Console.WriteLine("Path: " + ctx.Request.Path);
-                Console.WriteLine("For: " + ctx.Connection.RemoteIpAddress);
-                Console.WriteLine("Scheme: " + ctx.Request.Scheme);
+                Console.WriteLine("-----------------------");
+                Print(ctx);
                 return next();
             });
 
             app.UseMvc();
+        }
+
+        private void Print(HttpContext context)
+        {
+            Console.WriteLine("Headers:");
+            foreach (var h in context.Request.Headers)
+            {
+                Console.WriteLine($" - {h.Key}: {h.Value}");
+            }
+            Console.WriteLine("Host: " + context.Request.Host);
+            Console.WriteLine("Path: " + context.Request.Path);
+            Console.WriteLine("X-Forwarded-For: " + context.Request.Headers["X-Forwarded-For"]);
+            Console.WriteLine("RemoteIpAddress: " + context.Connection.RemoteIpAddress);
+            Console.WriteLine("Scheme: " + context.Request.Scheme);
         }
     }
 }

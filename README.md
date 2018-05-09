@@ -14,6 +14,10 @@ ssh -i key.pem ubuntu@[IP]
 scp -r -i key.pem /mnt/c/Projects/UbuntuTest/UbuntuTest/bin/Release/PublishOutput/* ubuntu@[IP]:/home/ubuntu
 ```
 
+```
+sudo mv ./PublishOutput/* /app/web/
+```
+
 ## Systemd
 
 Check logs
